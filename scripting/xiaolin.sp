@@ -172,6 +172,9 @@ char g_cTranslateShenGongWu[32];
 #if defined ADDONS_AND_FIXES
 	#include "include/xiaolin/fixesandaddons.inc"
 #endif
+#if defined GAME_MODES
+	#include "include/xiaolin/gamemodes.inc"
+#endif
 
 public void OnPluginStart()
 {
@@ -199,6 +202,9 @@ public void OnPluginStart()
 	
 #if defined ADDONS_AND_FIXES
 	OnPluginStartFixes();
+#endif
+#if defined GAME_MODES
+	OnPluginStartGameModes();
 #endif
 }
 
