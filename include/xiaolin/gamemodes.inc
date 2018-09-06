@@ -13,7 +13,7 @@ char g_cGameModesNames[2][] =
 
 #define MAX_COLORS		12 // przy 32 graczach nie da się więcej mieć 3 osobowych drużyn
 int g_iClientColors[MAX_PLAYERS+1];
-char g_cColorsNames[MAX_COLORS] = 
+/*char g_cColorsNames[MAX_COLORS] = 
 {
 	"None",
 	"Red",
@@ -28,7 +28,7 @@ char g_cColorsNames[MAX_COLORS] =
 	"Dark Red",
 	"Gray"
 	
-};
+};*/
 int g_iColorsRGB[MAX_COLORS][3] = 
 {
 	{255, 255, 255},
@@ -44,7 +44,7 @@ int g_iColorsRGB[MAX_COLORS][3] =
 	{75, 0, 0},
 	{255, 255, 255}
 };
-bool g_bIsSmallTeamsOn = false;
+//bool g_bIsSmallTeamsOn = false;
 
 stock void OnPluginStartGameModes()
 {
@@ -220,7 +220,7 @@ stock void InitSmallTeamDeathMatch(float time)
 	ServerCommand("mp_unpause_match");
 	
 	//set the spawns of orbs
-	g_bIsSmallTeamsOn = true;
+	//g_bIsSmallTeamsOn = true;
 	SmallTeamDeathMatchMakeTeams();
 	//stop dealing damage to them
 	
@@ -260,7 +260,7 @@ stock void SetSmallTeamDeathMatchEnd(float time)
 
 public Action EndSmallTeamDeathMatch(Handle hTimer)
 {
-	g_bIsSmallTeamsOn = false;
+	//g_bIsSmallTeamsOn = false;
 	for (int i = 1; i <= MAX_PLAYERS; i++)
 	{
 		g_iClientColors[i] = 0;
